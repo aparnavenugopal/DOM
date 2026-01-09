@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Elements</title>
+    <style>
+        html {font-family: sans-serif}
+        body {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        div,p{
+            padding: 0.8em;
+            margin: 1em 0;
+            border: 1px solid gray; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Accessing Elements</h1>
+    <h2>Using the id (#header)</h2>
+    <div id="header">
+      Access this by using <strong>
+        getElementByID()
+      </strong>
+    </div>
+    <h2>Using the class (.header)</h2>
+    <div class="header">
+     1. access this by using <strong>
+        getElementByClassName()
+     </strong>
+     </div>
+    <div class="header">
+         2. access this by using <strong>
+        getElementByClassName()
+     </strong>
+    </div>
+    <h2>Using the the Tag(paragraph tag)</h2>
+    <p>1.Access this by using <string>
+        getElementByTagName()
+    </string></p>
+    <h2>Using the query selector (with ID of 'query')</h2>
+    <div id="query">1.access this by using <strong>
+        querySelector()
+    </strong></div>
+    <h2>using query selector all(with clss of 'query-all')</h2>
+    <div class="query-all">
+     1.access this by using <strong>
+        querySelectorAll()
+     </strong>
+    </div>
+</body>
+</html>
