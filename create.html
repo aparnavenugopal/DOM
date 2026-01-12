@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements</title>
+    <style>
+        body{
+            background-color: aqua;
+            padding: 30px;
+        }
+        h1{
+            color:brown;
+            font-size: 72px;
+            font-family: sans-serif;
+            text-decoration:antiquewhite;
+        }
+        p{
+            color:chocolate;
+            font-size: 36px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Am I real?</h1>
+    <script>
+        let newEle = document.createElement('p');
+        newEle.textContent = "I created this element yeppi"
+        //step-1 grab the paranet
+        let bodyEle = document.querySelector('body');
+
+        //step-2 now attach our element
+        // bodyEle.appendChild(newEle);
+        //this time let us use insertbefore
+
+        let scriptEle = document.querySelector('script');
+        bodyEle.insertBefore(newEle, scriptEle);
+    </script>
+</body>
+</html>
