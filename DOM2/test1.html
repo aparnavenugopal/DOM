@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing element color</title>
+    <style>
+        h1,p{
+            text-align: center;
+        }
+        button{
+            display: block;
+            margin: 2em 0;
+            margin-left:auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">This is a really fun website</h1>
+    <p id="first-paragraph">Krishna is a great pet</p>
+    <p id="second-paragraph">Krishna loves his treats a lot</p>
+    <div class="wrapper">
+        <button>How about making everything blue</button>
+        <button class="red">How about making evrything red</button>
+    </div>
+    <script>
+       let redbtn = document.querySelector('.red');
+       let para = document.querySelectorAll('p');
+       let title = document.getElementById('title');
+       redbtn.addEventListener('click', () =>{
+          para.forEach(p => {
+            p.style.color = 'red';
+          });
+          title.style.color = 'red';
+       })
+    </script>
+</body>
+</html>
