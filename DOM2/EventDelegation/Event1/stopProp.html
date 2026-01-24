@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="three-a">
+        <button id="button1">Button One</button>
+    </div>
+    <script>
+        const clickHandler = () => {
+            console.log('I have been clicked');
+        }
+
+        const quitIt = (e) => {
+            console.log('you have been stopped');
+            e.stopPropagation();
+        }
+        let buttonOne = document.getElementById(
+            'button1');
+        buttonOne.addEventListener('click', clickHandler, true);
+        buttonOne.addEventListener('click', clickHandler, false);
+        let threeA = document.getElementById('three-a');
+        threeA.addEventListener('click', quitIt, true);
+    </script>
+</body>
+</html>

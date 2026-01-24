@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *{
+            margin: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>DIV
+       <form>FORM
+        <p>P</p>
+       </form>
+    </div>
+    <script>
+        for(const DomEle of document.querySelectorAll('*')){
+          DomEle.addEventListener('click', () => 
+            {alert(`Capturing : ${DomEle.tagName}`)}, true);
+          DomEle.addEventListener('click', () => alert(`bubbling: ${DomEle.tagName}`));
+        } 
+    </script>
+</body>
+</html>

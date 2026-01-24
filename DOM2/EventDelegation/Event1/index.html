@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1">Button One</button>
+    <button id="button2">Button Two</button>
+    <script>
+        const clickHandler = () => {
+            console.log('I have been clicked');
+        }
+        let button1 = document.getElementById('button1');
+        //lets execute the handler in the capture phase
+        button1.addEventListener('click', clickHandler, true);
+        //lets execute handler in the bubbling phase
+        button1.addEventListener('click', clickHandler, false);
+        //define handler
+    </script>
+</body>
+</html>
