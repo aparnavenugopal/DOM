@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table id="delegation_table">
+     <tr>
+        <th colspan="3">
+          <em>Dlegation</em>
+          Table: Click to Change Color
+        </th>
+     </tr>
+     <tr>
+        <td><strong>1</strong></td>
+        <td><strong>2</strong></td>
+        <td><strong>3</strong></td>
+     </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><strong>5</strong></td>
+        <td><strong>6</strong></td>
+     </tr>
+     <tr>
+        <td><strong>7</strong></td>
+        <td><strong>8</strong></td>
+        <td><strong>9</strong></td>
+     </tr>
+    </table>
+    <script>
+        let selectedElement = null;
+
+        const changeColor = (e) => {
+          let target = e.target.closest('td, th');
+        //   if(target.tagName != 'TD') return;
+          if(!target) return;
+          highlight(target);
+        }
+
+        const highlight = (node) => {
+          if(selectedElement != null){
+            selectedElement.classList.remove('highlight');
+          }
+          selectedElement = node;
+          selectedElement.classList.add('highlight');
+        }
+
+        let table = document.getElementById('delegation_table');
+        table.addEventListener('click', changeColor);
+    </script>
+</body>
+</html>

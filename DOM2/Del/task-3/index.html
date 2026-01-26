@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="delegation">
+      <div class="box">
+        <h3>Hip Hip Hippo</h3>
+        <p>
+          My dear krishna is a cute puppy whom I lov
+          the most!!!
+        </p>
+        <button class="remove">[x]</button>
+      </div>
+      <div class="box">
+        <h3>Keep Going</h3>
+        <p>
+          Being independent is what you have to live
+          for and feel for!!!
+        </p>
+        <button class="remove">[x]</button>
+      </div>
+      <div class="box">
+        <h3>India we love</h3>
+        <p>
+          India is a very beautiful country and I love 
+          my country a lot!!!
+        </p>
+        <button class="remove">[x]</button>
+      </div>
+    </div>
+    <script>
+        const remove = (e) => {
+           let target = e.target;
+           if(target.className !== 'remove'){
+             return;
+           }else{
+            target.parentElement.remove();
+           }
+        }
+
+        let divDel = document.getElementById('delegation');
+        divDel.addEventListener('click', remove);
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="food">
+      <li>
+        Fruits
+        <ul>
+           <li>
+            Orange
+            <ul>
+                <li>China Orange</li>
+                <li>Sweet Orange</li>
+                <li>Indian Orange</li>
+            </ul>
+           </li>
+           <li>
+            Lemon
+            <ul>
+                <li>Sweet Lemon</li>
+                <li>Thai lemon</li>
+                <li>Small lemon</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Vegetables
+        <ul>
+            <li>
+                Yummy Ones
+                <ul>
+                    <li>Potatos</li>
+                    <li>Ladies Finger</li>
+                    <li>Chamadumpa</li>
+                </ul>
+            </li>
+            <li>
+                Yucky Ones
+                <ul>
+                    <li>bottleguard</li>
+                    <li>Bitterguard</li>
+                    <li>Capsicum</li>
+                </ul>
+            </li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+        const showOrHide = (e) => {
+          let target = e.target;
+          if(target.tagName == 'LI'){
+            let ulShowOrHide = target.querySelector('ul');
+            if(ulShowOrHide){
+                ulShowOrHide.classList.toggle('hide');
+            }
+          }
+        }
+
+        let ul = document.getElementById('food');
+        ul.addEventListener('click', showOrHide);
+    </script>
+</body>
+</html>
