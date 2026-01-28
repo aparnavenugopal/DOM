@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Counter</title>
+    <style>
+        .completed{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input
+          id="taskInput"
+          type="text",
+          placeholder="Add Task"
+        />
+        <button id="AddButton">Add</button>
+    </div>
+    <script>
+        let taskArr = [];
+        let completedTask = 0;
+        let inputText = document.getElementById('taskInput');
+        let AddButtonEle = document.getElementById('AddButton');
+        let taskList = document.createElement('ul');
+        document.body.appendChild(taskList);
+        let taskTitle = document.createElement('h3');
+        document.body.appendChild(taskTitle);
+
+        const renderTask = () => {
+            taskTitle.textContent = `Tasks: ${taskArr.length} | Completed: ${completedTask}`;
+            taskList.innerHTML = '';
+            taskArr.forEach((item, index) => {
+                const li = document.createElement('li');
+                const del = document.createElement('button');
+                del.textContent = 'Delete';
+                li.textContent = item;
+                li.appendChild(del);
+                taskList.appendChild(li);
+
+                li.addEventListener('click', () => {
+                   const isCompleted = li.classList.toggle('completed');
+                   if(isCompleted){
+                    completedTask++;
+                   }else{
+                    completedTask--;
+                   }
+                   taskTitle.textContent = `Tasks: ${taskArr.length} | Completed: ${completedTask}`;
+                });                
+                del.addEventListener('click', () => {
+                    // del.parentElement.remove();
+                     taskArr.splice(index, 1);
+                     renderTask();
+                })
+
+            });
+
+        }
+
+        AddButtonEle.addEventListener('click', () => {
+            const value = inputText.value.trim();
+            if(!value) return;
+            taskArr.push(value);
+            renderTask();
+            inputText.value = '';
+        });
+
+    </script>
+</body>
+</html>
