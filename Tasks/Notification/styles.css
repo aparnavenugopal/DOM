@@ -1,0 +1,45 @@
+body{
+   margin: 20px;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+}
+
+.container{
+    width: 500px;
+    height: 400px;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.container-items{
+    text-align: center;
+}
+
+.heading{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+}
+
+.notification-input{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.button{
+    width: auto;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.add-btn{
+    background-color: aqua;
+}
+
+.clear-btn{
+    background-color: lightcoral;
+}
