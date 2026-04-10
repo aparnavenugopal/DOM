@@ -1,0 +1,19 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    width:300px;
+}
+
+textarea {
+    width: 100%;
+}
+
+.count{
+    width:100%;
+    text-align: right;
+}
